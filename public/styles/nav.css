@@ -1,0 +1,31 @@
+nav {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: white;
+}
+
+/* Used to adjust the  tweeter logo in nav bar */
+nav .logo {
+  display: flex;
+  font-size: 32px;
+  font-family: Bungee, sans-serif;
+  margin: 1.5em
+}
+
+/* Used to adjust the right content in nav bar */
+nav .content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: flex-end;
+  margin: 1.5em;
+}
+
+/* Used to adjust the double arrow underneath "Write a new tweet */
+.fa-angle-double-down:before {
+  color: red;
+  align-self: center;
+}

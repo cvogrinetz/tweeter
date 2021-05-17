@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  height: 480px;
+  width: 100%;
+  background-color: lightcoral;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("https://www.transparenttextures.com/patterns/light-grey-floral-motif.png")
+}
+
+
+header .image {
+  display: flex;
+  padding-top: 6em;
+
+}
