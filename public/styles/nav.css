@@ -28,4 +28,5 @@ nav .content {
 .fa-angle-double-down:before {
   color: red;
   align-self: center;
+  margin-top: 5px;
 }
