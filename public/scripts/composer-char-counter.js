@@ -4,12 +4,17 @@ $(document).ready( (event) => {
 });
 
 let  text = $('#tweet-text').on("keyup", event => {
-  // console.log("THROW IT INTO THE FIRE", event)
   let maxLength = 140;
   let length = $(text).val().length;
   length = maxLength-length;
-  $('#counter').text(length);
-  console.log(length)
+  $(this.counter).text(length);
+  
+  let counter = $(this.counter);
+  if(length < 0) {
+    counter.css("color", "#ff0000") 
+  } else {
+    counter.css("color", "#545149")
+  }
 });
   
     

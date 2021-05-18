@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
     <!-- External JS -->
@@ -35,7 +36,7 @@
     </nav>
 
 
-    <header>
+    <header class="userHeader">
       <div class="image">
         <img src="/images/profile-hex.png">
       </div>
@@ -61,6 +62,42 @@
           </div>
         </form>
       </section>
+
+
+      
+        <article class="tweetContainer">
+
+          <header class="tweetHeader">
+
+            <div class="tweetName">
+              <div class="fas fa-robot"></div>
+              <div class="tweetName">Newton</div>
+            </div>
+              
+            <div>@SirIsaac</div>
+
+          </header>
+
+
+          <div class="tweetContent">
+            <div>Next time you wanna see me, look up to the sky cause ima gonna be a star</div>
+          </div>
+
+            
+          <footer class="tweetFooter">
+            <div>10 days ago</div>
+            
+            <div class="footerIcons">
+            <div class="fas fa-flag"></div>
+            <div class="fas fa-retweet"></div>
+            <div class="fas fa-heart"></div></div>
+            </div>
+          </footer>  
+
+
+            
+        </article>
+
       
     </main>
     <script src="scripts/composer-char-counter.js"></script>

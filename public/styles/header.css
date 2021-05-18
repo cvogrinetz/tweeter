@@ -1,4 +1,4 @@
-header {
+.userHeader {
   display: flex;
   height: 480px;
   width: 100%;
@@ -10,8 +10,9 @@ header {
 }
 
 
-header .image {
+.userHeader .image {
   display: flex;
   padding-top: 6em;
 
 }
+

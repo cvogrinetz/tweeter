@@ -1,0 +1,35 @@
+.tweetContainer {
+  display: flex;
+  width: 600px;
+  height: 200px;
+  flex-direction: column;
+  background-color: cyan;
+  justify-content: space-between;
+  border: 3px black groove;
+
+}
+
+.tweetHeader {
+  display: flex;
+  justify-content: space-between;
+  border: 2px red solid;
+}
+
+
+
+.tweetFooter {
+  display: flex;
+  justify-content: space-between;
+  border: 2px purple solid;
+}
+
+.footerIcons {
+  display: flex;
+  border: 2px blue solid;
+  justify-content: flex-end;
+}
+
+.tweetName {
+  display: flex;
+  justify-content: flex-start;  
+}
