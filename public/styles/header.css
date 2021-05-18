@@ -1,11 +1,11 @@
 .userHeader {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: 480px;
   width: 100%;
   background-color: lightcoral;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-image: url("https://www.transparenttextures.com/patterns/light-grey-floral-motif.png")
 }
 

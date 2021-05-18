@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
+    <!--  Font Awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!--  Time Ago  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,7 +27,6 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <!-- <script src="scripts/composer-char-counter.js"></script> -->
 
   </head>
 
@@ -50,9 +52,12 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      
+
+
+
+      <!-- New Tweet Section  -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2>Tweet Tweet</h2>
         <form method="POST" action="/tweets">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" class="no-outline" placeholder="What are you humming about?"></textarea>
@@ -65,16 +70,17 @@
 
 
       
+      <!-- Old Tweet Section  -->
         <article class="tweetContainer">
 
           <header class="tweetHeader">
 
             <div class="tweetName">
-              <div class="fas fa-robot"></div>
-              <div class="tweetName">Newton</div>
+              <div class="fab fa-mailchimp"></div>
+              <div class="tweetName">BitterFunk</div>
             </div>
               
-            <div>@SirIsaac</div>
+            <div>@daFunk</div>
 
           </header>
 
@@ -85,21 +91,26 @@
 
             
           <footer class="tweetFooter">
+
             <div>10 days ago</div>
             
             <div class="footerIcons">
-            <div class="fas fa-flag"></div>
-            <div class="fas fa-retweet"></div>
-            <div class="fas fa-heart"></div></div>
+              <div class="fas fa-flag fa-lg" ></div>
+              <div class="fas fa-retweet fa-lg"></div>
+              <div class="fas fa-heart fa-lg"></div></div>
             </div>
+
           </footer>  
 
-
-            
         </article>
 
+            
+      </main>
+
+      <!-- JS function imports -->
+      <script src="scripts/time-ago.js"></script>
+      <script src="scripts/composer-char-counter.js"></script>
+    </body>
+  </html>
+
       
-    </main>
-    <script src="scripts/composer-char-counter.js"></script>
-  </body>
-</html>

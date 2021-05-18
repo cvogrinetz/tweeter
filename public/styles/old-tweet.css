@@ -1,18 +1,22 @@
 .tweetContainer {
   display: flex;
-  width: 600px;
-  height: 200px;
-  flex-direction: column;
-  background-color: cyan;
   justify-content: space-between;
-  border: 3px black groove;
-
+  flex-direction: column;
+  width: 800px;
+  height: 225px;
+  border: 3px #545149 groove;
 }
+
+.tweetContainer:hover {
+  box-shadow: 4px 4px lightslategray;
+}
+
 
 .tweetHeader {
   display: flex;
   justify-content: space-between;
-  border: 2px red solid;
+  margin : 0.5em;
+  font-size: 1.25em;
 }
 
 
@@ -20,16 +24,39 @@
 .tweetFooter {
   display: flex;
   justify-content: space-between;
-  border: 2px purple solid;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5;
+  font-size: 0.75em;
 }
 
 .footerIcons {
   display: flex;
-  border: 2px blue solid;
   justify-content: flex-end;
+  padding-bottom: 0.5em;
+}
+
+.fa-flag:hover {
+  color: gold;
+}
+
+.fa-retweet:hover {
+  color: gold;
+}
+
+.fa-heart:hover {
+  color: gold;
 }
 
 .tweetName {
   display: flex;
   justify-content: flex-start;  
+}
+
+.tweetContent {
+  display: flex;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding-bottom: 1.75em;
+  border-bottom: 3px #545149 groove;
 }
