@@ -6,31 +6,33 @@
 $(document).ready( (event) => {
 
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
 
+
+  // Will render each seperate tweet to page.
 const renderTweets = function(tweets) {
   for (const element of tweets) {
     let tweets = createTweetElement(element);
@@ -41,7 +43,7 @@ const renderTweets = function(tweets) {
 
 
 
-
+// Creates new tweet structure from incoming data.
 const createTweetElement = (tweetObject) => {
   const $tweet = 
 
@@ -81,23 +83,52 @@ const createTweetElement = (tweetObject) => {
 };
 
 
-renderTweets(data);
+// renderTweets(data);
 
 
 
-$('#form').submit(function (event) {
-  
-  event.preventDefault();
-  let message = $(this).serialize();
-  $.ajax({
+
+
+// Ajax GET request to render tweets right when page loads
+$.ajax('/tweets', {method: 'GET'})
+      .then(function (tweets) {
+      renderTweets(tweets);
+      })
+
+
+
+
+      
+// Ajax Post and Get request to grab tweet info and then render it to page AFTER new tweet created.  
+const loadTweets = () => {
+
+  $('#form').submit(function (event) {
+    event.preventDefault();
+    let message = $(this).serialize();
+    $.ajax({
       type: "POST",
       url: "/tweets",
       data: message,
+      })
+      .done((event) => {
+        $('.tweetSection').html('')
+        $.ajax('/tweets', {method: 'GET'})
+        .then(function (tweets) {
+        renderTweets(tweets);
+        })
       });
-  })
+    })
 
+
+
+
+  };
+  
+  loadTweets();
 
 
 
 
 });
+
+

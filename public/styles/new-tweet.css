@@ -16,7 +16,7 @@
   font-family: Bungee, sans-serif;
 }
 
-.submitButton {
+#submitButton {
   color: white;
   background-color: #4056A1;
 }
