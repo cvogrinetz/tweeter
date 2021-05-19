@@ -33,11 +33,10 @@ $(document).ready( (event) => {
 
 const renderTweets = function(tweets) {
   for (const element of tweets) {
-    // console.log(element)
     let tweets = createTweetElement(element);
     $('.tweetSection').prepend(tweets)
   }
-}
+};
 
 
 
@@ -46,7 +45,7 @@ const renderTweets = function(tweets) {
 const createTweetElement = (tweetObject) => {
   const $tweet = 
 
-  `<article class="tweetContainer">
+ `<article class="tweetContainer">
   <header class="tweetHeader">
 
     <div class="tweetName">
@@ -83,5 +82,22 @@ const createTweetElement = (tweetObject) => {
 
 
 renderTweets(data);
+
+
+
+$('#form').submit(function (event) {
+  
+  event.preventDefault();
+  let message = $(this).serialize();
+  $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: message,
+      });
+  })
+
+
+
+
 
 });
