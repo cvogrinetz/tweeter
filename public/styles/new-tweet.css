@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin: 3em;
 }
 
 #tweet-text {
@@ -21,12 +22,15 @@ main section button {
 }
 
 #tweet-text {
+  resize: none;
+  width: 700px;
   border: 3px;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
   background-color: #f4f1ec;
+
 }
 
 .no-outline:focus {
