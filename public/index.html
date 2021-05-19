@@ -61,8 +61,8 @@
         <form method="POST" action="/tweets">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" class="no-outline" placeholder="What are you humming about?"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
+          <div class="SubmitandCounter">
+            <button class="submitButton" type="submit">Tweet</button>
             <output name="counter" id="counter" for="tweet-text">140</output>
           </div>
         </form>
@@ -71,9 +71,9 @@
 
       
       <!-- Old Tweet Section  -->
-        <article class="tweetContainer">
-
-          <!-- <header class="tweetHeader">
+      <section class="tweetSection">
+      <article class="tweetContainer">
+          <header class="tweetHeader">
 
             <div class="tweetName">
               <div class="fab fa-mailchimp"></div>
@@ -100,11 +100,11 @@
               <div class="fas fa-heart fa-lg"></div></div>
             </div>
 
-          </footer> -->
+          </footer>
           
           
         </article>
-
+        </section>
         
 
             

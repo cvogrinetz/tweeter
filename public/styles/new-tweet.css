@@ -9,14 +9,14 @@
   display: flex;
 }
 
-main section div {
+.SubmitandCounter {
   display: flex;
   justify-content: space-between;
   margin: 5px;
   font-family: Bungee, sans-serif;
 }
 
-main section button {
+.submitButton {
   color: white;
   background-color: #4056A1;
 }
