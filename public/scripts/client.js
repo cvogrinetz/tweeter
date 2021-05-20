@@ -115,15 +115,24 @@ const loadTweets = () => {
     };
     console.log(data)
     if (!data.text.length) {
-      alert('Error! You tweeted nothing, try again!');
-      return event.preventDefault();
-    } else if(data.text.length > 140) {
-      alert('Error! You tweeted too much, try again but less!');
-      return event.preventDefault();
+      
+      $('#new-tweet').addClass('error')
+      $('#error').after(`<span class="error"><i class="fas fa-cat"></i>Cat got your tongue? Dont't be shy, try again!<i class="fas fa-cat"></i></span>`)
+      event.preventDefault();
     }
-    
-    
-    event.preventDefault();
+      
+    if (data.text.length > 140) {
+      
+      $('#new-tweet').addClass('error')
+      $('#error').after(`<span class="error"><i class="fas fa-bomb"></i>System will overload if you don't settle down. Try again but with smaller words!<i class="fas fa-bomb"></i></span>`)
+      event.preventDefault();
+    }
+
+    if (data.text.length && data.text.length <= 140) {
+      $('.error').remove();
+      $('#new-tweet').removeClass('error')
+      event.preventDefault();
+     
     let message = $(this).serialize();
     $.ajax({
       type: "POST",
@@ -137,8 +146,13 @@ const loadTweets = () => {
         renderTweets(tweets);
         })
       });
-    })
 
+
+      
+    }
+
+    })
+  
 
 
 
