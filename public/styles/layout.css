@@ -40,3 +40,56 @@ body {
  .container {
    background-color: #f4ecec;
  }
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .tweetSection {
+   float: left;
+   width: 100%;
+   margin-left: -10em;
+}
+
+article.tweetContainer {
+  height: 15em;
+  font-size: 0.80em;
+  width: 100%;
+}
+
+#form {
+  float: left;
+  width: 120%;
+  margin-left: -3.5em;
+}
+
+nav .content {
+  font-size: 0.85em;
+  padding-top: 3em;
+}
+
+span.error {
+  font-size: 0.85em;
+  width: 100%;
+  margin-left: -4em;
+}
+
+}
+
+ @media only screen and (min-width: 1024px) {
+  .userHeader {
+    width: 33.3%;
+    float: left;
+    position: fixed;
+    margin-top: 10em;
+    margin-left: 3em;
+  }
+
+  .container {
+    width: 60%;
+    float: right;
+    margin-top: 7em;
+    margin-right: 3em;
+  }
+}

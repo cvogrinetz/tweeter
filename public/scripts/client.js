@@ -79,21 +79,30 @@ const loadTweets = () => {
     let data = {
       text: $('#tweet-text').val()
     };
-    console.log(data)
+
+
+    // If there is NO input this error message will prompt user
     if (!data.text.length) {
+
+      $('.error').remove();
+      $('#new-tweet').removeClass('error')
       
       $('#new-tweet').addClass('error')
       $('#error').after(`<span class="error"><i class="fas fa-cat"></i>Cat got your tongue? Dont't be shy, try again!<i class="fas fa-cat"></i></span>`)
       event.preventDefault();
     }
-      
+    // If the maximum character limit is exceeded then this error message will prompt user  
     if (data.text.length > 140) {
       
+      $('.error').remove();
+      $('#new-tweet').removeClass('error')
+
       $('#new-tweet').addClass('error')
       $('#error').after(`<span class="error"><i class="fas fa-bomb"></i>System will overload if you don't settle down. Try again but with smaller words!<i class="fas fa-bomb"></i></span>`)
       event.preventDefault();
     }
 
+    // If all is good with the input form then this will run and render the tweets proper
     if (data.text.length && data.text.length <= 140) {
       $('.error').remove();
       $('#new-tweet').removeClass('error')
@@ -106,11 +115,12 @@ const loadTweets = () => {
       data: message,
       })
       .done((event) => {
-        $('.tweetSection').html('')
+        // $('.tweetSection').html('')
         $.ajax('/tweets', {method: 'GET'})
         .then(function (tweets) {
+          $('.tweetSection').prepend(createTweetElement(tweets[tweets.length - 1]));
+          $('#counter').text(140);
           $('#form')[0].reset();
-        renderTweets(tweets);
         });
       });
     };
