@@ -6,32 +6,6 @@
 $(document).ready( (event) => {
 
 
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd" },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
-
-
   // Will render each seperate tweet to page.
 const renderTweets = function(tweets) {
   for (const element of tweets) {
@@ -48,6 +22,11 @@ const escape = function (str) {
 };
 
 
+// Ajax GET request to render tweets right when page loads
+$.ajax('/tweets', {method: 'GET'})
+      .then(function (tweets) {
+      renderTweets(tweets);
+    });
 
 
 // Creates new tweet structure from incoming data.
@@ -88,19 +67,6 @@ const createTweetElement = (tweetObject) => {
   return $tweet;
   
 };
-
-
-
-
-
-// Ajax GET request to render tweets right when page loads
-$.ajax('/tweets', {method: 'GET'})
-      .then(function (tweets) {
-      renderTweets(tweets);
-      })
-
-
-
 
       
 // Ajax Post and Get request to grab tweet info and then render it to page AFTER new tweet created.  
@@ -143,26 +109,14 @@ const loadTweets = () => {
         $('.tweetSection').html('')
         $.ajax('/tweets', {method: 'GET'})
         .then(function (tweets) {
+          $('#form')[0].reset();
         renderTweets(tweets);
-        })
+        });
       });
+    };
+  }); 
+}
 
+loadTweets();
 
-      
-    }
-
-    })
-  
-
-
-
-  };
-  
-  loadTweets();
-
-
-
-
-});
-
-
+})

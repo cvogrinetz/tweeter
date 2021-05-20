@@ -2,7 +2,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 3em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: 5em;
+  width: 70%;
 }
 
 #tweet-text {
@@ -23,13 +26,13 @@
 
 #tweet-text {
   resize: none;
-  width: 700px;
+  width: 100%;
   border: 3px;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
-  background-color: #f4f1ec;
+  background-color: #f4ecec;
 
 }
 

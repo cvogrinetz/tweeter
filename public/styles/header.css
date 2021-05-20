@@ -16,3 +16,19 @@
 
 }
 
+@media only screen and (min-width: 1024px) {
+  .userHeader {
+    width: 33.3%;
+    float: left;
+    position: fixed;
+    margin-top: 10em;
+    margin-left: 3em;
+  }
+
+  .container {
+    width: 60%;
+    float: right;
+    margin-top: 7em;
+    margin-right: 3em;
+  }
+}

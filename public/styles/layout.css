@@ -18,7 +18,7 @@ body {
   font-family: Source Sans Pro, sans-serif;
   font-size: 24px;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #f4ecec;
   
 }
 
@@ -35,4 +35,8 @@ body {
    width: 90%;
    margin: 0 auto;
    background-color: #f4f1ec;
+ }
+
+ .container {
+   background-color: #f4ecec;
  }
