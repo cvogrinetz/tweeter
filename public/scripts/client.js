@@ -40,6 +40,13 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Escape function that stops cross-site script
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 
 
 
@@ -51,23 +58,23 @@ const createTweetElement = (tweetObject) => {
   <header class="tweetHeader">
 
     <div class="tweetName">
-      <div><img src=${tweetObject.user.avatars}></div>
-      <div class="tweetName">${tweetObject.user.name}</div>
+      <div><img src=${escape(tweetObject.user.avatars)}></div>
+      <div class="tweetName">${escape(tweetObject.user.name)}</div>
     </div>
       
-    <div>${tweetObject.user.handle}</div>
+    <div>${escape(tweetObject.user.handle)}</div>
 
   </header>
 
 
   <div class="tweetContent">
-    <div>${tweetObject.content.text}</div>
+    <div>${escape(tweetObject.content.text)}</div>
   </div>
 
     
   <footer class="tweetFooter">
 
-    <div>${timeago.format(new Date(tweetObject.created_at))}</div>
+    <div>${escape(timeago.format(new Date(tweetObject.created_at)))}</div>
     
     <div class="footerIcons">
       <div class="fas fa-flag fa-lg" ></div>
@@ -81,9 +88,6 @@ const createTweetElement = (tweetObject) => {
   return $tweet;
   
 };
-
-
-// renderTweets(data);
 
 
 
@@ -102,7 +106,23 @@ $.ajax('/tweets', {method: 'GET'})
 // Ajax Post and Get request to grab tweet info and then render it to page AFTER new tweet created.  
 const loadTweets = () => {
 
+
+
   $('#form').submit(function (event) {
+
+    let data = {
+      text: $('#tweet-text').val()
+    };
+    console.log(data)
+    if (!data.text.length) {
+      alert('Error! You tweeted nothing, try again!');
+      return event.preventDefault();
+    } else if(data.text.length > 140) {
+      alert('Error! You tweeted too much, try again but less!');
+      return event.preventDefault();
+    }
+    
+    
     event.preventDefault();
     let message = $(this).serialize();
     $.ajax({
