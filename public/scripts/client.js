@@ -134,7 +134,6 @@ const loadTweets = () => {
       data: message,
       })
       .done((event) => {
-        // $('.tweetSection').html('')
         $.ajax('/tweets', {method: 'GET'})
         .then(function (tweets) {
           $('.tweetSection').prepend(createTweetElement(tweets[tweets.length - 1]));
@@ -148,4 +147,4 @@ const loadTweets = () => {
 
 loadTweets();
 
-})
+});

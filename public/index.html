@@ -1,92 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
-    <!-- TO USE BUNGEE IN CSS USE TAG Bungee. FOR USE OF SOURCE SANS PRO USE TAG -->
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
-    <!--  Font Awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <!--  Time Ago  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap"
+    rel="stylesheet">
+  <!-- TO USE BUNGEE IN CSS USE TAG Bungee. FOR USE OF SOURCE SANS PRO USE TAG -->
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
+  <!--  Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <!--  Time Ago  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-
-
-
-  </head>
-
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <div class="logo">tweeter</div>
-      <div class="content fas fa-angle-double-down">Write a new tweet</div>
-    </nav>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-    <header class="userHeader">
-      <div class="image">
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div class="name">
-        <h2>BitterFunk</h2>
-      </div>
-    </header>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
 
 
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
+</head>
 
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <div class="logo">tweeter</div>
+    <div class="content fas fa-angle-double-down">Write a new tweet<div>
+  </nav>
 
-      <!-- New Tweet Section  -->
-      <section class="new-tweet">
-
-        
-        <section id="error"></section>
-
-
-        <form id="form" method="POST" action="/tweets">
-          <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" class="no-outline" placeholder="What are you humming about?"></textarea>
-          <div class="SubmitandCounter">
-            <button id="submitButton" type="submit">Tweet</button>
-            <output name="counter" id="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      
-      <!-- Old Tweet Section  -->
-      <section class="tweetSection"></section>
-
-
-      <a id="scrollToTop" href="#"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
-
-    </main>
-
-    <!-- JS function imports -->
-    <script src="scripts/time-ago.js"></script>
-    <script src="scripts/composer-char-counter.js"></script>
+  <!-- Profile Header -->
+  <header class="userHeader">
+    <div class="image">
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div class="name">
+      <h2>BitterFunk</h2>
+    </div>
+  </header>
 
 
 
-  </body>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+
+
+    <!-- Create New Tweet Section  -->
+    <section class="new-tweet">
+
+
+      <section id="error"></section>
+
+
+      <form id="form" method="POST" action="/tweets">
+        <label for="tweet-text"></label>
+        <textarea name="text" id="tweet-text" class="no-outline" placeholder="What are you humming about?"></textarea>
+        <div class="SubmitandCounter">
+          <button id="submitButton" type="submit">Tweet</button>
+          <output name="counter" id="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
+
+    <!-- Old Tweet Section  -->
+    <section class="tweetSection"></section>
+
+
+    <a id="scrollToTop" href="#"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
+
+  </main>
+
+  <!-- JS function imports -->
+  <script src="scripts/time-ago.js"></script>
+  <script src="scripts/composer-char-counter.js"></script>
+
+</body>
 </html>
