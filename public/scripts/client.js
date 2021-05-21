@@ -22,6 +22,27 @@ const escape = function (str) {
 };
 
 
+
+// Scroll to top button functionality
+$(window).scroll(function() {
+  var height = $(window).scrollTop();
+  if (height > 100) {
+      $('#scrollToTop').fadeIn();
+  } else {
+      $('#scrollToTop').fadeOut();
+  }
+});
+$(document).ready(function() {
+  $("#scrollToTop").click(function(event) {
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+  });
+
+});
+
+
+
 // Ajax GET request to render tweets right when page loads
 $.ajax('/tweets', {method: 'GET'})
       .then(function (tweets) {
@@ -41,7 +62,7 @@ const createTweetElement = (tweetObject) => {
       <div class="tweetName">${escape(tweetObject.user.name)}</div>
     </div>
       
-    <div>${escape(tweetObject.user.handle)}</div>
+    <div class="userHandle">${escape(tweetObject.user.handle)}</div>
 
   </header>
 
@@ -128,5 +149,11 @@ const loadTweets = () => {
 }
 
 loadTweets();
+
+
+
+
+
+
 
 })

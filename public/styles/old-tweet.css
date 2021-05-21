@@ -2,14 +2,16 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin-left: 7em;
+  margin-left: auto;
   margin-bottom: 2em;
+  margin-right: 1em;
   width: 80%;
   height: 300px;
   border: 3px #545149 groove;
   word-break: break-word;
   
 }
+
 
 .tweetContainer:hover {
   box-shadow: 4px 4px lightslategray;
