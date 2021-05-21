@@ -15,3 +15,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Screenshots
+
+!["Screenshot of desktop sized screen"](https://github.com/cvogrinetz/tweeter/blob/master/docs/DesktopScreenSize.png?raw=true)
+!["Screenshot of tablet sized screen"](https://github.com/cvogrinetz/tweeter/blob/master/docs/TabletSizeScreen.png?raw=true)
+!["Screenshot of mobile sized screen"](https://github.com/cvogrinetz/tweeter/blob/master/docs/MobileSizeScreen.png?raw=true)
