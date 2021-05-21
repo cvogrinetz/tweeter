@@ -42,10 +42,8 @@ body {
    background-color: #f4ecec;
  }
 
-
-
+ 
  #scrollToTop {
-
   overflow: hidden;
   display: none;
   cursor: pointer;
@@ -61,7 +59,8 @@ body {
 
 
 
-/* Styles for smallest screen type */
+
+
 @media only screen and (max-width: 768px) {
   .tweetSection {
    float: left;
@@ -82,14 +81,14 @@ article.tweetContainer {
 }
 
 nav .content {
-  padding-top: 3em;
   font-size: 0.85em;
+  padding-top: 3em;
 }
 
 span.error {
+  font-size: 0.85em;
   width: 100%;
   margin-left: -4em;
-  font-size: 0.85em;
 }
 
 .tweetHeader .tweetName {
@@ -100,6 +99,7 @@ span.error {
   font-size: 0.95em;
 }
 
+
 #scrollToTop {
   display: block;
   margin-left: auto;
@@ -108,23 +108,26 @@ span.error {
 }
 
 
+
 }
 
-
-/* Styles for largest screen type */
  @media only screen and (min-width: 1024px) {
   .userHeader {
+    width: 33.3%;
     float: left;
     position: fixed;
-    width: 33.3%;
     margin-top: 10em;
     margin-left: 3em;
   }
 
   .container {
-    float: right;
     width: 60%;
+    float: right;
     margin-top: 7em;
     margin-right: 3em;
+  }
+
+  .tweetSection {
+    width: 100%;
   }
 }

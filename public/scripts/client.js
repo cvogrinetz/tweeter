@@ -22,7 +22,6 @@ const escape = function (str) {
 };
 
 
-
 // Scroll to top button functionality
 $(window).scroll(function() {
   var height = $(window).scrollTop();
@@ -40,7 +39,6 @@ $(document).ready(function() {
   });
 
 });
-
 
 
 // Ajax GET request to render tweets right when page loads
@@ -62,7 +60,7 @@ const createTweetElement = (tweetObject) => {
       <div class="tweetName">${escape(tweetObject.user.name)}</div>
     </div>
       
-    <div class="userHandle">${escape(tweetObject.user.handle)}</div>
+    <div>${escape(tweetObject.user.handle)}</div>
 
   </header>
 
@@ -149,11 +147,5 @@ const loadTweets = () => {
 }
 
 loadTweets();
-
-
-
-
-
-
 
 })

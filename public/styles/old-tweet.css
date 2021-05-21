@@ -12,7 +12,6 @@
   
 }
 
-
 .tweetContainer:hover {
   box-shadow: 4px 4px lightslategray;
 }
@@ -66,4 +65,8 @@
   margin-right: 0.5em;
   padding-bottom: 1.75em;
   border-bottom: 3px #545149 groove;
+}
+
+.tweetSection {
+  width: 100%;
 }
